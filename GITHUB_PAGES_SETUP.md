@@ -1,19 +1,19 @@
-# Enable GitHub Pages for Beacon Website
+# Enable GitHub Pages for Nervestack Website
 
 ## ✅ Your code is now on GitHub!
-Repository: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE
+Repository: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE
 
 ## Next Steps: Enable GitHub Pages
 
 ### 1. Go to Repository Settings
-1. Open: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE
+1. Open: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE
 2. Click **Settings** (top right)
 3. Click **Pages** (left sidebar)
 
 ### 2. Configure GitHub Pages
 1. Under **Source**:
    - Branch: Select **main**
-   - Folder: Select **/ (root)** or **/beacon-website**
+   - Folder: Select **/ (root)** or **/Nervestack-website**
 2. Click **Save**
 
 ### 3. Wait for Deployment (1-2 minutes)
@@ -22,12 +22,12 @@ Repository: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE
 
 ### 4. Your Website Will Be Live At:
 ```
-https://adividan1012.github.io/Beacon-Labs/beacon-website/
+https://adividan1012.github.io/Nervestack-Labs/Nervestack-website/
 ```
 
 Or if you selected root:
 ```
-https://adividan1012.github.io/Beacon-Labs/
+https://adividan1012.github.io/Nervestack-Labs/
 ```
 
 ## Optional: Custom Domain (Free)
@@ -36,7 +36,7 @@ If you want a custom domain later:
 
 ### Option 1: is-a.dev (Free Forever)
 1. Fork: https://github.com/is-a-dev/register
-2. Add `domains/beaconlang.json`:
+2. Add `domains/Nervestacklang.json`:
 ```json
 {
   "owner": {
@@ -49,10 +49,10 @@ If you want a custom domain later:
 }
 ```
 3. Submit PR
-4. Once approved: `beaconlang.is-a.dev`
+4. Once approved: `Nervestacklang.is-a.dev`
 
 ### Option 2: Keep GitHub Subdomain
-- `adividan1012.github.io/Beacon-Labs/beacon-website/`
+- `adividan1012.github.io/Nervestack-Labs/Nervestack-website/`
 - Completely free forever
 - No setup needed
 
@@ -61,9 +61,9 @@ If you want a custom domain later:
 Whenever you want to update the website:
 
 ```bash
-cd c:\Users\aadit\OneDrive\Desktop\project_2_Beacon
+cd c:\Users\aadit\OneDrive\Desktop\project_2_Nervestack
 
-# Make changes to beacon-website/index.html or style.css
+# Make changes to Nervestack-website/index.html or style.css
 
 # Then push:
 git add .
@@ -79,16 +79,16 @@ Once your site is live, update the download links in `index.html`:
 
 ```html
 <!-- Change to GitHub releases -->
-<a href="https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/releases/download/v1.0/beacon.exe">
+<a href="https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/releases/download/v1.0/Nervestack.exe">
     Download Compiler
 </a>
 ```
 
 To create a release:
-1. Go to: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/releases/new
+1. Go to: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/releases/new
 2. Tag: `v1.0`
-3. Title: `Beacon v1.0`
-4. Upload `beacon.exe` and `beacon-0.0.3.vsix`
+3. Title: `Nervestack v1.0`
+4. Upload `Nervestack.exe` and `Nervestack-0.0.3.vsix`
 5. Publish release
 
 ---

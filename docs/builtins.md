@@ -1,6 +1,6 @@
-# Built-in Functions in Beacon
+# Built-in Functions in Nervestack
 
-This document provides a comprehensive list of all built-in functions available in the Beacon language. These functions are designed to be intuitive and align with Beacon's UOP (Universal User-Oriented Programming) philosophy, providing straightforward ways to perform common tasks.
+This document provides a comprehensive list of all built-in functions available in the Nervestack language. These functions are designed to be intuitive and align with Nervestack's UOP (Universal User-Oriented Programming) philosophy, providing straightforward ways to perform common tasks.
 
 ---
 
@@ -23,7 +23,7 @@ This document provides a comprehensive list of all built-in functions available 
 | Function      | Description                                                       | Example                           |
 | ------------- | ----------------------------------------------------------------- | --------------------------------- |
 | `ask(prompt)` | Prompts the user for input and **automatically detects and converts the type**. Returns `Num` for numbers, `On`/`Off` for booleans, `Nil` for nil, or `Text` for everything else. | `age = ask("Enter your age: ")` ← auto-converts to number |
-| `show(value)` | Displays a value to the standard output.                          | `show("Hello, Beacon!")`          |
+| `show(value)` | Displays a value to the standard output.                          | `show("Hello, Nervestack!")`          |
 
 ---
 

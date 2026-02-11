@@ -1,4 +1,4 @@
-# beacon_ast.py
+# nervestack_ast.py
 
 from dataclasses import dataclass
 
@@ -214,7 +214,7 @@ class CheckStatementNode(ASTNode):
             "altern_clause": [stmt.to_dict() for stmt in self.altern_clause] if self.altern_clause else None
         }
 
-class EachNode(ASTNode):
+class TraverseNode(ASTNode):
     def __init__(self, var_name, iterable, body):
         self.var_name = var_name
         self.iterable = iterable
@@ -222,7 +222,7 @@ class EachNode(ASTNode):
 
     def to_dict(self):
         return {
-            "type": "EachNode",
+            "type": "TraverseNode",
             "var_name": self.var_name,
             "iterable": self.iterable.to_dict(),
             "body": [stmt.to_dict() for stmt in self.body]

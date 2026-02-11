@@ -1,6 +1,6 @@
-# Beacon Language Keywords
+# Nervestack Language Keywords
 
-This document provides a comprehensive dictionary of all keywords in the Beacon language, organized by category.
+This document provides a comprehensive dictionary of all keywords in the Nervestack language, organized by category.
 
 ---
 

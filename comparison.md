@@ -1,14 +1,14 @@
-# Beacon vs Java, C, and Python - Language Comparison
+# Nervestack vs Java, C, and Python - Language Comparison
 
 ## Executive Summary
 
-**Beacon (BPL)** is a uniquely-expressive compiled language that combines Python's readability, C's performance, and Java's structure while introducing novel constructs for modern software development.
+**Nervestack (NSL)** is a uniquely-expressive compiled language that combines Python's readability, C's performance, and Java's structure while introducing novel constructs for modern software development.
 
 ---
 
 ## Feature Comparison Matrix
 
-| Feature | Beacon | Python | Java | C |
+| Feature | Nervestack | Python | Java | C |
 |---------|--------|--------|------|---|
 | **Type System** | Dynamic | Dynamic | Static | Static |
 | **Memory Model** | Manual + Scopes | GC | GC | Manual |
@@ -26,8 +26,8 @@
 
 ### Hello World
 
-**Beacon:**
-```beacon
+**Nervestack:**
+```Nervestack
 spec main:
     show "Hello, World!"
 done
@@ -61,8 +61,8 @@ int main() {
 
 ### Loop Syntax
 
-**Beacon (Traverse):**
-```beacon
+**Nervestack (Traverse):**
+```Nervestack
 traverse i from 1 to 10:
     show i
 done
@@ -74,22 +74,22 @@ for i in range(1, 11):
     print(i)
 ```
 
-**Analysis:** Beacon's `traverse` offers a readable, English-like alternative to standard for-loops.
+**Analysis:** Nervestack's `traverse` offers a readable, English-like alternative to standard for-loops.
 
-**Analysis:** Beacon balances verbosity (explicit `spec`/`done`) with readability (natural keywords).
+**Analysis:** Nervestack balances verbosity (explicit `spec`/`done`) with readability (natural keywords).
 
 ---
 
-## Unique Beacon Features
+## Unique Nervestack Features
 
 ### 1. **Pack Collections**
-```beacon
+```Nervestack
 firm numbers = pack(1, 2, 3, 4, 5)
 firm mixed = pack("text", 42, On)
 ```
 
 ### 2. **Built-in Events**
-```beacon
+```Nervestack
 listen "UserLogin":
     show "User logged in!"
 done
@@ -103,6 +103,6 @@ signal "UserLogin"
 
 ## Conclusion
 
-**Beacon = Python's elegance + C's speed + Java's structure + unique innovations.**
+**Nervestack = Python's elegance + C's speed + Java's structure + unique innovations.**
 
 **Status:** Production-ready ✅

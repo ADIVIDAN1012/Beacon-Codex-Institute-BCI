@@ -1,4 +1,4 @@
-< Complete Beacon UOP Integration Test >
+< Complete Nervestack UOP Integration Test >
 < Tests all working features in one unified program >
 
 spec calculate_sum(a, b) {
@@ -6,13 +6,13 @@ spec calculate_sum(a, b) {
 }
 
 spec main() {
-    show("=== Beacon UOP Complete Test ===")
+    show("=== Nervestack UOP Complete Test ===")
     show("")
     
     < Test 1: Variables and Constants >
     show("Test 1: Variables and Constants")
     firm pi = 3.14159
-    firm name = "Beacon"
+    firm name = "Nervestack"
     show(pi)
     show(name)
     show("")

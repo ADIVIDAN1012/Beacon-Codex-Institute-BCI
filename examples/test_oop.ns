@@ -1,4 +1,4 @@
-< Test Beacon OOP Features >
+< Test Nervestack OOP Features >
 < This tests blueprint, shard, prep, own, spawn >
 
 spec main() {

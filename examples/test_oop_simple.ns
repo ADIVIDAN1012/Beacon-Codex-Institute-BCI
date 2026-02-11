@@ -1,4 +1,4 @@
-< Test Beacon OOP - Simple Version >
+< Test Nervestack OOP - Simple Version >
 
 spec main() {
     show("Testing OOP...")

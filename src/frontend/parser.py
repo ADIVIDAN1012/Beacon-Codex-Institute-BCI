@@ -1,11 +1,11 @@
 # parser.py
 
-from .symbol_table import SymbolTable
-from .lexer import Token
-from .beacon_ast import (
+from symbol_table import SymbolTable
+from lexer import Token
+from nervestack_ast import (
     ProgramNode, NumberNode, BinaryOpNode, UnaryOpNode, VarAccessNode, VarAssignNode, ConstantDeclNode, 
     ShowStatementNode, NickDeclNode, FunctionDeclNode, ReturnStatementNode, FunctionCallNode, MethodCallNode, 
-    StringNode, ExpressionStatementNode, DocstringNode, CheckStatementNode, EachNode, UntilNode, 
+    StringNode, ExpressionStatementNode, DocstringNode, CheckStatementNode, TraverseNode, UntilNode, 
     AttemptTrapConcludeNode, BlueprintNode, AttributeAccessNode, SpawnNode, DenNode, ConvertNode, 
     ToolkitNode, PlugNode, BridgeNode, InletNode, LinkNode, InterpolatedStringNode, HaltNode, ProceedNode, 
     WaitNode, TriggerNode, BlameNode, TypeNode, KindNode, NickNode, HiddenNode, ShieldedNode, InternalNode, 
@@ -283,7 +283,7 @@ class Parser:
         range_op = Token('RANGE', '..')
         iterable = BinaryOpNode(start_val, range_op, end_val)
         
-        return EachNode(var_name, iterable, body)
+        return TraverseNode(var_name, iterable, body)
 
     def expression(self):
         return self.logic_or()
@@ -430,7 +430,7 @@ class Parser:
                         if interp_expr.strip() == 'peek':
                             parts.append(VarAccessNode('peek'))
                         else:
-                            from .lexer import Lexer
+                            from lexer import Lexer
                             temp_lexer = Lexer(interp_expr)
                             temp_parser = self.__class__(temp_lexer.tokenize())
                             parts.append(temp_parser.expression())
@@ -610,7 +610,7 @@ class Parser:
         while self.current_token.type not in ('DONE', 'EOF'):
             body.append(self.statement())
         self.eat('DONE')
-        return EachNode(var_name, iterable, body)
+        return TraverseNode(var_name, iterable, body)
 
     def parse_until_statement(self):
         self.eat('UNTIL')

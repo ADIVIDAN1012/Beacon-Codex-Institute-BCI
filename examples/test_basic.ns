@@ -1,4 +1,4 @@
-< Simple Beacon Test >
+< Simple Nervestack Test >
 
 spec main() {
     show("Testing basic features...")

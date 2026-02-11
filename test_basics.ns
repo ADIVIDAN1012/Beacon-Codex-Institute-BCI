@@ -3,7 +3,7 @@ spec main:
     show "1. Variables & Types"
     firm pi = 3.14
     count = 0
-    firm name = "Beacon"
+    firm name = "Nervestack"
     firm is_active = On
     
     show "Pi: |pi|"

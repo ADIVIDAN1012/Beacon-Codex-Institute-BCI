@@ -1,18 +1,18 @@
-# Contributing to Beacon
+# Contributing to Nervestack
 
-Thank you for your interest in contributing to Beacon! This document contains technical details for developers working on the compiler and toolchain.
+Thank you for your interest in contributing to Nervestack! This document contains technical details for developers working on the compiler and toolchain.
 
 ## 🏗️ Project Structure
 
 ```
-Beacon-Labs/
+Nervestack-Labs/
 ├── src/
 │   ├── frontend/         # Python Compiler (Lexer/Parser/AST)
 │   └── runtime/          # C Interpreter (VM/Backend)
 ├── third_party/          # Dependencies (cJSON)
 ├── tools/                # VS Code Extension, Scripts, Website
 ├── docs/                 # Documentation files
-├── examples/             # Example .bpl files
+├── examples/             # Example .NSL files
 ├── tests/                # Test suite
 └── README.md             # Main user documentation
 ```
@@ -36,7 +36,7 @@ cd src/runtime
 .\build.bat
 ```
 
-This generates `main.exe` - the Beacon runtime interpreter.
+This generates `main.exe` - the Nervestack runtime interpreter.
 
 #### Step 2: Compile to AST (Frontend)
 
@@ -44,15 +44,15 @@ The frontend is Python-based and requires no compilation, but you run it to gene
 
 ```bash
 cd src/frontend
-py frontend.py ..\..\examples\your_file.bpl
+py frontend.py ..\..\examples\your_file.NSL
 ```
 
 ### Testing & Verification
 
 To verify if a feature works:
 
-1. **Write a test:** Create a `.bpl` file using the feature
-2. **Compile:** Run `py src/frontend/frontend.py examples/yourtest.bpl` to generate `ast.json`
+1. **Write a test:** Create a `.NSL` file using the feature
+2. **Compile:** Run `py src/frontend/frontend.py examples/yourtest.NSL` to generate `ast.json`
 3. **Execute:** Run `.\src\runtime\main.exe ast.json`
 4. **Verify:** Does it produce the expected output?
 
@@ -68,6 +68,6 @@ py test_runner.py
 ## VS Code Extension
 
 To work on the extension:
-1. Open the `beacon-vscode-extension` folder in VS Code.
+1. Open the `Nervestack-vscode-extension` folder in VS Code.
 2. Press `F5` to launch a new VS Code window with the extension loaded.
 

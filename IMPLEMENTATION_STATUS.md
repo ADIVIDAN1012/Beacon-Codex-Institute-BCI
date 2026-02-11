@@ -1,4 +1,4 @@
-# Beacon Language - Implementation Status
+# Nervestack Language - Implementation Status
 
 This document provides an honest assessment of what features are **actually implemented** versus what's **documented** in the various `.md` files.
 
@@ -61,7 +61,7 @@ Based on the lexer, parser, and test files, the following features are **confirm
 - ✅ **Comparison:** `==`, `'=` (not equal), `<`, `>`, `<=`, `>=`
 - ✅ **Logical:** `'` (not)
 - ✅ **String Interpolation:** `"text |expression| text"`
-- ✅ **Member Access:** `.` (dot notation)
+- ✅ **Member Access:** `~>` (dot notation)
 
 ### Other
 - ✅ **Type Aliases:** `nick ... as ...` (type aliasing)
@@ -120,7 +120,7 @@ These features are **mentioned in documentation** but haven't been verified in t
 ### For Documentation
 1. **Mark Feature Status:** Each keyword in `Keywords.md` should have a status badge (✅ Stable, ⚠️ Experimental, 🚧 In Progress)
 2. **Update Examples:** `Examples.md` should only show **verified working** examples
-3. **Create Test Coverage:** More `.bpl` test files to demonstrate each feature actually works
+3. **Create Test Coverage:** More `.ns` test files to demonstrate each feature actually works
 
 ### For Development
 1. **Verify Backend Implementation:** The C backend needs audit to confirm which AST nodes are actually executed
@@ -133,16 +133,15 @@ These features are **mentioned in documentation** but haven't been verified in t
 
 To check if a feature actually works:
 
-1. **Write a test:** Create a `.bpl` file using the feature
-2. **Compile:** Run `py frontend.py test.bpl` to generate `ast.json`
-3. **Execute:** Run `.\main.exe ..\ast.json` from `compiler_backend_c`
-4. **Observe:** Does it work as documented?
+1. **Write a test:** Create a `.ns` file using the feature
+2. **Execute:** Run `py src/frontend/main.py run test.ns` (interpreter mode) or `py src/frontend/main.py compile test.ns` (C backend)
+3. **Observe:** Does it work as documented?
 
 ---
 
 ## 📝 Conclusion
 
-**Beacon has a solid foundation** with:
+**Nervestack has a solid foundation** with:
 - ✅ Core language features working
 - ✅ Control flow and error handling functional
 - ✅ Basic OOP likely operational

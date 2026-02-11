@@ -1,12 +1,12 @@
-# Beacon Programming Language
+# Nervestack Programming Language
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Beacon is a high-level, dynamically typed programming language developed by **Beacon Codex Institute**. It integrates **Object-Oriented Programming (OOP)** with the **Universal User-Oriented Programming (UOP)** paradigm. This unique combination prioritizes readability and user intuition while maintaining the structural benefits of object-oriented design, bridging the gap between human thought processes and machine execution.
+Nervestack is a high-level, dynamically typed programming language developed by **Nervestack Codex Institute (NCI)**. It integrates **Object-Oriented Programming (OOP)** with the **Universal User-Oriented Programming (UOP)** paradigm. This unique combination prioritizes readability and user intuition while maintaining the structural benefits of object-oriented design, bridging the gap between human thought processes and machine execution.
 
 ## Introduction
 
-Beacon is designed as a general-purpose language that emphasizes clarity. By utilizing keywords and control flow structures that mirror natural English, Beacon attempts to make source code self-documenting and accessible, while maintaining the capabilities required for complex software development, including object-oriented design and concurrency support.
+Nervestack is designed as a general-purpose language that emphasizes clarity. By utilizing keywords and control flow structures that mirror natural English, Nervestack attempts to make source code self-documenting and accessible, while maintaining the capabilities required for complex software development, including object-oriented design and concurrency support.
 
 ## Key Features
 
@@ -18,7 +18,7 @@ Beacon is designed as a general-purpose language that emphasizes clarity. By uti
 
 ## Feature Support Status
 
-The following table explicitly outlines the current implementation status of Beacon language features.
+The following table explicitly outlines the current implementation status of Nervestack language features.
 
 | Feature Category | Implementation Status | Notes |
 | :--- | :--- | :--- |
@@ -45,8 +45,8 @@ The following table explicitly outlines the current implementation status of Bea
 1.  **Clone the Repository**
 
     ```bash
-    git clone https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE.git
-    cd Beacon-Code-Engine-BCE
+    git clone https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-NCE.git
+    cd Nervestack-Code-Engine-NCE
     ```
 
 2.  **Build the Runtime Environment**
@@ -63,13 +63,13 @@ The following table explicitly outlines the current implementation status of Bea
 
 ## Usage
 
-Beacon programs are executed in two stages: parsing (frontend) and interpretation (backend).
+Nervestack programs are executed in two stages: parsing (frontend) and interpretation (backend).
 
 ### 1. Create a Source File
 
-Create a file with the `.bpl` extension, for example `hello.bpl`:
+Create a file with the `.ns` extension, for example `hello.ns`:
 
-```beacon
+```nervestack
 spec main:
     show "Hello, World!"
 done
@@ -84,7 +84,7 @@ funcall main
 Run the Python frontend to generate the Abstract Syntax Tree (AST):
 
 ```bash
-python -m src.frontend.parser hello.bpl
+python -m src.frontend.parser hello.ns
 ```
 
 **Step 2: Execute Runtime**
@@ -92,21 +92,21 @@ python -m src.frontend.parser hello.bpl
 Run the C runtime with the generated JSON AST:
 
 ```bash
-BPL.exe hello.bpl.json
+NSL.exe hello.ns.json
 ```
 
 ## Language Examples
 
 ### Variable Declaration and I/O
 
-```beacon
+```nervestack
 firm user_name = ask "Enter your name: "
 show "Welcome, |user_name|."
 ```
 
 ### Control Flow
 
-```beacon
+```nervestack
 firm value = 10
 
 check (value > 5):
@@ -118,7 +118,7 @@ done
 
 ### Functions
 
-```beacon
+```nervestack
 spec calculate_area(radius):
     forward 3.14 * radius * radius
 done
@@ -141,4 +141,4 @@ For detailed language specifications, refer to the following documentation:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Copyright © 2025 Beacon Codex Institute.
+Copyright © 2026 Nervestack Codex Institute (NCI).

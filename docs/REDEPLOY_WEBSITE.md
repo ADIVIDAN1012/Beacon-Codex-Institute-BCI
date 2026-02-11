@@ -1,37 +1,37 @@
-# 🚀 Redeploy Beacon Website to GitHub Pages
+# 🚀 Redeploy Nervestack Website to GitHub Pages
 
 ## ✅ Changes Pushed to GitHub
 
-Your website files are now updated and pushed to: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE
+Your website files are now updated and pushed to: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE
 
 **Updated:**
 - Download links now point to v2.0.0 GitHub release assets
-- BPL.exe link: `https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/releases/download/v2.0.0/BPL.exe`
-- VS Code extension link: `https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/releases/download/v2.0.0/beacon-2.0.0.vsix`
+- NSL.exe link: `https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/releases/download/v2.0.0/NSL.exe`
+- VS Code extension link: `https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/releases/download/v2.0.0/Nervestack-2.0.0.vsix`
 
 ---
 
 ## 📋 Next Steps: Configure GitHub Pages
 
-### Option 1: Deploy from `beacon-website` folder (Recommended)
+### Option 1: Deploy from `Nervestack-website` folder (Recommended)
 
-1. Go to: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/settings/pages
+1. Go to: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/settings/pages
 
 2. Under **Source**:
    - Branch: Select **main**
-   - Folder: Select **/beacon-website**
+   - Folder: Select **/Nervestack-website**
    - Click **Save**
 
 3. Wait 1-2 minutes for deployment
 
 4. Your site will be live at:
    ```
-   https://adividan1012.github.io/Beacon-Labs/
+   https://adividan1012.github.io/Nervestack-Labs/
    ```
 
 ### Option 2: Deploy from root with custom workflow
 
-If you want the site at the root URL without the `/beacon-website` path, you'll need to either:
+If you want the site at the root URL without the `/Nervestack-website` path, you'll need to either:
 - Move the website files to the root directory, OR
 - Create a custom GitHub Actions workflow
 
@@ -41,12 +41,12 @@ If you want the site at the root URL without the `/beacon-website` path, you'll 
 
 **Just follow these 3 steps:**
 
-1. **Open Settings**: https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/settings/pages
+1. **Open Settings**: https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/settings/pages
 
 2. **Configure**:
    - Source: **Deploy from a branch**
    - Branch: **main**
-   - Folder: **/beacon-website**
+   - Folder: **/Nervestack-website**
 
 3. **Save** and wait 1-2 minutes
 
@@ -55,7 +55,7 @@ If you want the site at the root URL without the `/beacon-website` path, you'll 
 ## 🔍 Verify Deployment
 
 Once deployed, check:
-- ✅ Site loads: https://adividan1012.github.io/Beacon-Labs/
+- ✅ Site loads: https://adividan1012.github.io/Nervestack-Labs/
 - ✅ Download buttons work
 - ✅ Styling looks correct
 - ✅ Images load properly
@@ -67,11 +67,11 @@ Once deployed, check:
 To update the website in the future:
 
 ```bash
-cd c:\Users\aadit\OneDrive\Desktop\project_2_Beacon
+cd c:\Users\aadit\OneDrive\Desktop\project_2_Nervestack
 
-# Make changes to beacon-website/index.html or style.css
+# Make changes to Nervestack-website/index.html or style.css
 
-git add beacon-website/
+git add Nervestack-website/
 git commit -m "Update website"
 git push origin main
 ```

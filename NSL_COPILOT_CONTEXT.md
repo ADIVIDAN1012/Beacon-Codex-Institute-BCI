@@ -1,7 +1,7 @@
-# Beacon Programming Language (BPL) v2.0 Context
+# Nervestack Programming Language (NSL) v2.0 Context
 
 **Overview**
-Beacon (BPL) is a custom interpreted language with a Python frontend (Lexer/Parser) and a C-based Runtime (Interpreter). It communicates via a JSON AST.
+Nervestack (NSL) is a custom interpreted language with a Python frontend (Lexer/Parser) and a C-based Runtime (Interpreter). It communicates via a JSON AST.
 
 ## 1. Syntax & Structure
 
@@ -20,14 +20,14 @@ multi-line comment ^>`
 - **Syntax:** `pack(item1, item2, ...)`
 - **Access:** `list~>0` (The `~>` operator is the **exclusive** access operator; `.` is invalid)
 - **Example:**
-  ```beacon
+  ```Nervestack
   firm numbers = pack(1, 2, 3)
   firm mixed = pack("A", 42, On)
   ```
 
 ### Control Flow
 **Conditionals:**
-```beacon
+```Nervestack
 when x > 10:
     show "High"
 otherwise when x > 5:
@@ -49,7 +49,7 @@ done
 ### Functions
 - **Keyword:** `spec`
 - **Return:** `forward value` or `giving value` (deprecated)
-```beacon
+```Nervestack
 spec add(a, b):
     forward a + b
 done
@@ -58,7 +58,7 @@ firm result = add(10, 20)
 ```
 
 ### Error Handling
-```beacon
+```Nervestack
 attempt:
     trigger "ErrorName"
 trap "ErrorName":
@@ -69,7 +69,7 @@ done
 ## 2. Object-Oriented Programming (OOP)
 
 ### Blueprints (Classes)
-```beacon
+```Nervestack
 blueprint Dog:
     has name
     has age
@@ -88,7 +88,7 @@ done
 ```
 
 ### Instantiation & Usage
-```beacon
+```Nervestack
 < Spawn creates instance >
 firm myDog = spawn Dog("Buddy", 5)
 
@@ -104,8 +104,8 @@ show myDog~>age
 - **Toolkit (Library):** `toolkit Math:` ... `done`
 
 ## 4. Execution Model
-1. **Frontend (Python):** Parses `.bpl` -> Generates `.bpl.json` (AST).
-2. **Runtime (C):** Loads `.bpl.json` -> Executes logic.
+1. **Frontend (Python):** Parses `.NSL` -> Generates `.NSL.json` (AST).
+2. **Runtime (C):** Loads `.NSL.json` -> Executes logic.
    - **Performance:** Near-native C execution.
    - **Memory:** Reference counting / Manual scope management (v2.0).
 

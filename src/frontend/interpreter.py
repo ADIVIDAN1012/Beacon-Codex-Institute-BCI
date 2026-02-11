@@ -1,14 +1,14 @@
 """
-Beacon Language Interpreter
-Executes Beacon AST directly without compilation to C
+Nervestack Language Interpreter
+Executes Nervestack AST directly without compilation to C
 """
 
 from typing import Any, Dict, List, Optional
-from beacon_ast import *
+from nervestack_ast import *
 import sys
 
 
-class BeaconRuntimeError(Exception):
+class NervestackRuntimeError(Exception):
     """Runtime error during interpretation"""
     def __init__(self, message: str, node: Optional[ASTNode] = None):
         self.message = message
@@ -32,7 +32,7 @@ class Environment:
     def define_constant(self, name: str, value: Any):
         """Define a constant (immutable)"""
         if name in self.constants:
-            raise BeaconRuntimeError(f"Constant '{name}' already defined")
+            raise NervestackRuntimeError(f"Constant '{name}' already defined")
         self.constants[name] = value
     
     def get_variable(self, name: str) -> Any:
@@ -43,18 +43,18 @@ class Environment:
             return self.constants[name]
         if self.parent:
             return self.parent.get_variable(name)
-        raise BeaconRuntimeError(f"Undefined variable: '{name}'")
+        raise NervestackRuntimeError(f"Undefined variable: '{name}'")
     
     def set_variable(self, name: str, value: Any):
         """Set variable value (cannot modify constants)"""
         if name in self.constants:
-            raise BeaconRuntimeError(f"Cannot modify constant '{name}'")
+            raise NervestackRuntimeError(f"Cannot modify constant '{name}'")
         if name in self.variables:
             self.variables[name] = value
         elif self.parent:
             self.parent.set_variable(name, value)
         else:
-            raise BeaconRuntimeError(f"Undefined variable: '{name}'")
+            raise NervestackRuntimeError(f"Undefined variable: '{name}'")
     
     def define_function(self, name: str, func_node: FunctionDeclNode):
         """Define a function"""
@@ -104,7 +104,7 @@ class Interpreter:
         """Interpret a Beacon program"""
         try:
             self.visit(program)
-        except BeaconRuntimeError as e:
+        except NervestackRuntimeError as e:
             print(f"Runtime Error: {e.message}", file=sys.stderr)
             sys.exit(1)
     
@@ -116,7 +116,7 @@ class Interpreter:
     
     def generic_visit(self, node: ASTNode):
         """Fallback for unimplemented node types"""
-        raise BeaconRuntimeError(f"No visit method for {node.__class__.__name__}")
+        raise NervestackRuntimeError(f"No visit method for {node.__class__.__name__}")
     
     # ===== Program and Statements =====
     
@@ -195,7 +195,7 @@ class Interpreter:
             return left * right
         elif op == '/':
             if right == 0:
-                raise BeaconRuntimeError("Division by zero")
+                raise NervestackRuntimeError("Division by zero")
             return left / right
         elif op == '%':
             return left % right
@@ -221,9 +221,11 @@ class Interpreter:
             return left and right
         elif op == 'or' or op == '||':
             return left or right
+        elif op == '..':
+            return range(int(left), int(right) + 1)
         
         else:
-            raise BeaconRuntimeError(f"Unknown binary operator: {op}")
+            raise NervestackRuntimeError(f"Unknown binary operator: {op}")
     
     def visit_UnaryOpNode(self, node: UnaryOpNode) -> Any:
         """Evaluate unary operation"""
@@ -236,7 +238,15 @@ class Interpreter:
         elif op == 'not' or op == '!':
             return not operand
         else:
-            raise BeaconRuntimeError(f"Unknown unary operator: {op}")
+            raise NervestackRuntimeError(f"Unknown unary operator: {op}")
+
+    def visit_InterpolatedStringNode(self, node: InterpolatedStringNode) -> str:
+        """Evaluate interpolated string"""
+        result = ""
+        for part in node.parts:
+            val = self.visit(part)
+            result += str(val)
+        return result
     
     # ===== Control Flow =====
     
@@ -262,8 +272,7 @@ class Interpreter:
     
     def visit_TraverseNode(self, node: TraverseNode):
         """Execute traverse (for) loop"""
-        start = int(self.visit(node.start_val))
-        end = int(self.visit(node.end_val))
+        iterable = self.visit(node.iterable)
         
         # Create new scope for loop variable
         loop_env = Environment(self.current_env)
@@ -271,7 +280,13 @@ class Interpreter:
         self.current_env = loop_env
         
         try:
-            for i in range(start, end + 1):
+            # Handle list/range/etc
+            if isinstance(iterable, (range, list, tuple)):
+                it = iterable
+            else:
+                it = iterable
+
+            for i in it:
                 loop_env.define_variable(node.var_name, i)
                 try:
                     for stmt in node.body:
@@ -328,14 +343,14 @@ class Interpreter:
         # User-defined function
         func = self.current_env.get_function(node.function_name)
         if not func:
-            raise BeaconRuntimeError(f"Undefined function: '{node.function_name}'")
+            raise NervestackRuntimeError(f"Undefined function: '{node.function_name}'")
         
         # Evaluate arguments
         args = [self.visit(arg) for arg in node.arguments]
         
         # Check argument count
         if len(args) != len(func.params):
-            raise BeaconRuntimeError(
+            raise NervestackRuntimeError(
                 f"Function '{node.function_name}' expects {len(func.params)} arguments, got {len(args)}"
             )
         

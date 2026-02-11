@@ -1,6 +1,6 @@
-# Beacon Standard Library
+# Nervestack Standard Library
 
-The Beacon Standard Library is a collection of built-in `toolkits` that provide essential functionalities. These libraries are designed to be consistent with Beacon's UOP principles, offering intuitive and powerful tools for common programming tasks.
+The Nervestack Standard Library is a collection of built-in `toolkits` that provide essential functionalities. These libraries are designed to be consistent with Nervestack's UOP principles, offering intuitive and powerful tools for common programming tasks.
 
 ---
 

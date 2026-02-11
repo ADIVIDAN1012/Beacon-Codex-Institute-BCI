@@ -1,6 +1,6 @@
-# Beacon Code Examples
+# Nervestack Code Examples
 
-This document provides a series of code examples to demonstrate the syntax, features, and UOP (Universal User-Oriented Programming) principles of the Beacon language.
+This document provides a series of code examples to demonstrate the syntax, features, and UOP (Universal User-Oriented Programming) principles of the Nervestack language.
 
 ---
 
@@ -8,7 +8,7 @@ This document provides a series of code examples to demonstrate the syntax, feat
 
 This example shows basic input and output using `ask` and `show`.
 
-```beacon
+```Nervestack
 spec greet_user {
     name = ask("Enter your name: ")
     show("Hello, |name|!")
@@ -23,7 +23,7 @@ greet_user()
 
 This example demonstrates how to convert text input to numbers and perform a simple calculation.
 
-```beacon
+```Nervestack
 spec calculate_sum {
     a_text = ask("Enter the first number: ")
     b_text = ask("Enter the second number: ")
@@ -42,9 +42,9 @@ calculate_sum()
 
 ## 3. Conditional Logic
 
-Beacon uses `check`, `alter`, and `altern` for conditional branching, similar to `if`, `else if`, and `else`.
+Nervestack uses `check`, `alter`, and `altern` for conditional branching, similar to `if`, `else if`, and `else`.
 
-```beacon
+```Nervestack
 spec check_number {
     n_text = ask("Enter a number: ")
     n = convert n_text to Num
@@ -69,7 +69,7 @@ check_number()
 
 The `traverse` keyword is used for iterating over a range of numbers.
 
-```beacon
+```Nervestack
 spec list_squares {
     show("Squares of numbers from 1 to 5:")
     traverse i from 1 to 5 {
@@ -86,7 +86,7 @@ list_squares()
 
 This example shows how to handle potential errors, such as division by zero, using `attempt` and `trap`.
 
-```beacon
+```Nervestack
 spec safe_divide {
     attempt {
         a = convert ask("Enter numerator: ") to Num
@@ -116,7 +116,7 @@ safe_divide()
 
 Functions (or `spec`s) use the `forward` keyword to return a value.
 
-```beacon
+```Nervestack
 spec get_square(x) {
     forward x * x
 }
@@ -135,7 +135,7 @@ use_square()
 
 A `blueprint` is used to define a class. Objects are instances of blueprints.
 
-```beacon
+```Nervestack
 blueprint Car {
     shard name
 
@@ -148,7 +148,7 @@ blueprint Car {
     }
 }
 
-my_car = Car("BeaconX")
+my_car = Car("NervestackX")
 my_car.drive()
 ```
 
@@ -158,9 +158,9 @@ my_car.drive()
 
 Code can be organized into reusable `toolkit`s. Use `plug` to import a toolkit and `share` to export its functions.
 
-**File: `math_utils.beacon`**
+**File: `math_utils.Nervestack`**
 
-```beacon
+```Nervestack
 toolkit MathOps {
     share spec square(n) {
         forward n * n
@@ -170,8 +170,8 @@ toolkit MathOps {
 
 **Main File:**
 
-```beacon
-plug MathOps from "math_utils.beacon"
+```Nervestack
+plug MathOps from "math_utils.Nervestack"
 
 spec main {
     result = square(5)

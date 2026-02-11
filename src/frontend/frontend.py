@@ -1,7 +1,7 @@
 from lexer import Lexer
 from parser import Parser
 import json
-from beacon_ast import ProgramNode
+from nervestack_ast import ProgramNode
 import sys
 
 import os
@@ -34,7 +34,7 @@ def generate_ast_json(source_code: str):
     else:
         # Running as script
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        backend_exe = os.path.join(script_dir, '..', 'compiler_backend_c', 'main.exe')
+        backend_exe = os.path.join(script_dir, '..', 'runtime', 'main.exe')
     
     backend_exe = os.path.abspath(backend_exe)
 

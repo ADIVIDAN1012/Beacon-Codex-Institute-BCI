@@ -1,6 +1,6 @@
 """
-Beacon Language CLI
-Main entry point for the Beacon compiler and interpreter
+Nervestack Language CLI
+Main entry point for the Nervestack compiler and interpreter
 """
 
 import sys
@@ -13,23 +13,23 @@ from frontend import generate_ast_json
 
 def print_usage():
     """Print usage information"""
-    print("""Beacon Programming Language
+    print("""Nervestack Programming Language
 
 Usage:
-    beacon run <file.bpl>       Run Beacon file with interpreter
-    beacon compile <file.bpl>   Compile Beacon file to C
-    beacon <file.bpl>           Run Beacon file (default mode)
-    beacon --help               Show this help message
+    nervestack run <file.ns>       Run Nervestack file with interpreter
+    nervestack compile <file.ns>   Compile Nervestack file to C
+    nervestack <file.ns>           Run Nervestack file (default mode)
+    nervestack --help               Show this help message
 
 Examples:
-    beacon run hello.bpl        # Interpret and run
-    beacon compile hello.bpl    # Compile to C
-    beacon hello.bpl            # Same as 'beacon run hello.bpl'
+    nervestack run hello.ns        # Interpret and run
+    nervestack compile hello.ns    # Compile to C
+    nervestack hello.ns            # Same as 'nervestack run hello.ns'
 """)
 
 
 def run_file(file_path: str):
-    """Run a Beacon file using the interpreter"""
+    """Run a Nervestack file using the interpreter"""
     try:
         with open(file_path, 'r') as f:
             source_code = f.read()
@@ -59,7 +59,7 @@ def run_file(file_path: str):
 
 
 def compile_file(file_path: str):
-    """Compile a Beacon file to C"""
+    """Compile a Nervestack file to C"""
     try:
         with open(file_path, 'r') as f:
             source_code = f.read()
@@ -107,8 +107,8 @@ def main():
         file_path = first_arg
     
     # Validate file extension
-    if not file_path.endswith('.bpl'):
-        print(f"Warning: File '{file_path}' does not have .bpl extension", file=sys.stderr)
+    if not file_path.endswith('.ns'):
+        print(f"Warning: File '{file_path}' does not have .ns extension", file=sys.stderr)
     
     # Execute based on mode
     if mode == 'run':

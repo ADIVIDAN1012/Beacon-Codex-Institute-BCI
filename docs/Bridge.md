@@ -1,6 +1,6 @@
-# Bridge Interfaces in Beacon
+# Bridge Interfaces in Nervestack
 
-A **Bridge** is a fundamental concept in Beacon's Universal User-Oriented Programming (UOP) model. It serves as a formal interface for defining how different parts of a system, or the system and a user, can interact. Bridges ensure that communication is structured, predictable, and aligned with the user-oriented nature of the language.
+A **Bridge** is a fundamental concept in Nervestack's Universal User-Oriented Programming (UOP) model. It serves as a formal interface for defining how different parts of a system, or the system and a user, can interact. Bridges ensure that communication is structured, predictable, and aligned with the user-oriented nature of the language.
 
 ---
 
@@ -21,7 +21,7 @@ A **Bridge** is a fundamental concept in Beacon's Universal User-Oriented Progra
 
 A `bridge` is declared with a name and a set of `exposed` specifications (`spec`). These specs define the "contract" of the bridge.
 
-```beacon
+```Nervestack
 bridge Calculator {
     expose spec add(a, b)
     expose spec subtract(a, b)
@@ -34,7 +34,7 @@ bridge Calculator {
 
 A `toolkit` or `blueprint` can implement a bridge's `spec`s. The implementation contains the actual logic for the exposed methods.
 
-```beacon
+```Nervestack
 toolkit BasicMath {
     spec add(a, b) {
         forward a + b
@@ -52,7 +52,7 @@ toolkit BasicMath {
 
 To use a bridge, you `link` a variable to an implementation that fulfills the bridge's contract. This allows you to call the bridge's methods on the linked variable.
 
-```beacon
+```Nervestack
 < Assuming BasicMath toolkit is available >
 
 inlet {
@@ -72,14 +72,14 @@ inlet {
 
 Bridges can be composed. You can `embed` one bridge within another to create more complex interaction patterns, such as adding an authentication layer to a user interface.
 
-```beacon
+```Nervestack
 bridge AuthBridge {
     expose spec validate(token)
 }
 
 toolkit SimpleAuth {
     spec validate(token) {
-        check token == "beacon123" {
+        check token == "Nervestack123" {
             forward "Access Granted"
         }
         forward "Access Denied"
@@ -107,7 +107,7 @@ toolkit AppUI {
 
 In a UOP design, interaction typically starts at an `inlet` and flows through `linked` bridges. This ensures a clear and predictable path for data and control.
 
-```beacon
+```Nervestack
 inlet {
     link ui to AppUI
     
@@ -127,4 +127,4 @@ inlet {
 - **Links** connect the "what" to the "how," making the bridge usable.
 - **Inlets** are the starting points for user interaction with the system through bridges.
 
-Beacon's bridge system promotes a clean separation of concerns, making code more modular, reusable, and easier to understand from a user's perspective.
+Nervestack's bridge system promotes a clean separation of concerns, making code more modular, reusable, and easier to understand from a user's perspective.

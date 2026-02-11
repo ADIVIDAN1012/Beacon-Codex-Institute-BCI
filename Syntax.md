@@ -1,6 +1,6 @@
-# Beacon Syntax Guide
+# Nervestack Syntax Guide
 
-This document provides a complete reference to the syntax of the Beacon programming language. All code blocks are enclosed in curly braces `{}` and do not require indentation.
+This document provides a complete reference to the syntax of the Nervestack programming language. All code blocks are enclosed in curly braces `{}` and do not require indentation.
 
 ---
 
@@ -10,7 +10,7 @@ This document provides a complete reference to the syntax of the Beacon programm
 
 Single-line and multi-line comments are used to add notes that are ignored by the compiler.
 
-```beacon
+```Nervestack
 < This is a single-line comment >
 
 <^
@@ -23,8 +23,8 @@ It can span several lines.
 
 Variables are assigned using the `=` operator.
 
-```beacon
-my_variable = "Hello, Beacon"
+```Nervestack
+my_variable = "Hello, Nervestack"
 user_age = 30
 ```
 
@@ -32,7 +32,7 @@ user_age = 30
 
 A `firm` variable is a constant and cannot be reassigned.
 
-```beacon
+```Nervestack
 firm PI = 3.14159
 ```
 
@@ -40,8 +40,8 @@ firm PI = 3.14159
 
 The `show` keyword prints values to the console.
 
-```beacon
-show("Welcome to Beacon!")
+```Nervestack
+show("Welcome to Nervestack!")
 show("The value of PI is |PI|")
 ```
 
@@ -51,7 +51,7 @@ show("The value of PI is |PI|")
 
 A function, or `spec`, is a reusable block of code.
 
-```beacon
+```Nervestack
 spec my_function(param1, param2) {
     < function body >
     forward param1 + param2 < returns a value >
@@ -63,7 +63,7 @@ result = my_function(10, 20)
 
 A `note` can be used to add a docstring.
 
-```beacon
+```Nervestack
 spec calculate_sum(a, b) {
     note: "This spec returns the sum of two numbers."
     forward a + b
@@ -78,7 +78,7 @@ spec calculate_sum(a, b) {
 
 `check`, `alter`, and `altern` are used for conditional logic.
 
-```beacon
+```Nervestack
 check(x > 10) {
     show("x is greater than 10")
 }
@@ -94,7 +94,7 @@ altern {
 
 `traverse` and `until` are used for looping.
 
-```beacon
+```Nervestack
 < For loop >
 traverse i from 1 to 5 {
     show("Iteration: |i|")
@@ -114,7 +114,7 @@ until count >= 5 {
 
 The `attempt-trap-conclude` block is used for handling errors.
 
-```beacon
+```Nervestack
 attempt {
     risky_operation()
 }
@@ -134,7 +134,7 @@ conclude {
 
 A `blueprint` defines the structure for an object.
 
-```beacon
+```Nervestack
 blueprint Dog {
     shard name
     solid species = "Canine"
@@ -153,7 +153,7 @@ blueprint Dog {
 
 A `blueprint` can `adopt` from another.
 
-```beacon
+```Nervestack
 blueprint Poodle {
     adopt Dog
 
@@ -167,7 +167,7 @@ blueprint Poodle {
 
 Create an instance of a `blueprint`.
 
-```beacon
+```Nervestack
 my_dog = Dog("Buddy")
 my_dog.bark()
 ```
@@ -180,8 +180,8 @@ my_dog.bark()
 
 A `toolkit` is a file that contains reusable code.
 
-```beacon
-< In file "math_utils.beacon" >
+```Nervestack
+< In file "math_utils.Nervestack" >
 toolkit Math {
     share spec add(a, b) {
         forward a + b
@@ -193,8 +193,8 @@ toolkit Math {
 
 Use `plug` to import a `toolkit`.
 
-```beacon
-plug Math from "math_utils.beacon"
+```Nervestack
+plug Math from "math_utils.Nervestack"
 
 sum = Math.add(5, 10)
 show("Sum from toolkit: |sum|")
@@ -206,7 +206,7 @@ show("Sum from toolkit: |sum|")
 
 A `bridge` defines an interface that can be implemented by `toolkit`s or `blueprint`s.
 
-```beacon
+```Nervestack
 bridge Greeter {
     expose spec say_hello(name)
 }

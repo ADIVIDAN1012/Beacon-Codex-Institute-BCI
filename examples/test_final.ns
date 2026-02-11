@@ -5,7 +5,7 @@ blueprint Box {
 }
 
 spec main() {
-    show("=== BEACON 2.0 - FINAL TEST ===")
+    show("=== Nervestack 2.0 - FINAL TEST ===")
     
     < Test 1: Blueprint and Properties >
     show("Test 1: Creating blueprint instance...")
@@ -23,7 +23,7 @@ spec main() {
         show(i)
     }
     
-    show("=== ALL TESTS COMPLETE - BEACON 100% ===")
+    show("=== ALL TESTS COMPLETE - Nervestack 100% ===")
 }
 
 funcall main()

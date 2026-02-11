@@ -1,4 +1,4 @@
-< Beacon UOP Comprehensive Test >
+< Nervestack UOP Comprehensive Test >
 < Tests the Universal User-Oriented Programming paradigm >
 < Including functions, control flow, and readable syntax >
 
@@ -7,7 +7,7 @@ spec calculate_sum(a, b) {
 }
 
 spec greet_user(name) {
-    show("Welcome to Beacon UOP!")
+    show("Welcome to Nervestack UOP!")
     show("Hello, " + name + "!")
 }
 
@@ -50,7 +50,7 @@ spec demonstrate_error_handling() {
 }
 
 spec main() {
-    show("=== Beacon UOP Test Suite ===")
+    show("=== Nervestack UOP Test Suite ===")
     show("")
     
     < Test 1: Functions >

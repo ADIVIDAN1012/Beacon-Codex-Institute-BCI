@@ -1,4 +1,4 @@
-< Beacon 2.0 - Complete Integration Test >
+< Nervestack 2.0 - Complete Integration Test >
 < Tests ALL working features together >
 
 blueprint Person {
@@ -68,7 +68,7 @@ spec test_error_handling() {
 
 spec main() {
     show("========================================")
-    show("  BEACON 2.0 - COMPLETE TEST SUITE")
+    show("  Nervestack 2.0 - COMPLETE TEST SUITE")
     show("========================================")
     show("")
     
@@ -82,7 +82,7 @@ spec main() {
     show("")
     
     show("========================================")
-    show("  ALL TESTS PASSED - BEACON 100%!")
+    show("  ALL TESTS PASSED - Nervestack 100%!")
     show("========================================")
 }
 

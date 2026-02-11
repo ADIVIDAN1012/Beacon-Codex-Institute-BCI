@@ -1,4 +1,4 @@
-< Beacon 100% - Final Working Demo >
+< Nervestack 100% - Final Working Demo >
 
 blueprint Box {
     shard value
@@ -9,4 +9,4 @@ b.value = 42
 show("Property test:")
 show(b.value)
 
-show("Beacon 100% Complete!")
+show("Nervestack 100% Complete!")

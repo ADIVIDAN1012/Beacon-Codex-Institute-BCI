@@ -2,7 +2,7 @@
 
 ## 🎉 New Feature: Automatic Type Detection in `ask()`
 
-The `ask()` function now automatically detects and converts user input to the appropriate data type, making Beacon even more intuitive and user-friendly!
+The `ask()` function now automatically detects and converts user input to the appropriate data type, making Nervestack even more intuitive and user-friendly!
 
 ### ✨ What's New
 
@@ -25,7 +25,7 @@ The `ask()` function now automatically detects and converts user input to the ap
 
 ### 📝 Usage Examples
 
-```beacon
+```Nervestack
 spec main() {
     < Automatically converts to number >
     firm age = ask("Enter your age: ")
@@ -56,7 +56,7 @@ spec main() {
 
 ### 📦 Download
 
-**BPL.exe** (Windows Executable)
+**NSL.exe** (Windows Executable)
 - Fully compiled standalone executable
 - Includes C backend with type conversion
 - No dependencies required
@@ -73,7 +73,7 @@ spec main() {
 
 **Full Changelog**: See commit history for detailed changes
 
-**Installation**: Download `BPL.exe` and run your `.bpl` files:
+**Installation**: Download `NSL.exe` and run your `.NSL` files:
 ```bash
-BPL.exe your_program.bpl
+NSL.exe your_program.NSL
 ```

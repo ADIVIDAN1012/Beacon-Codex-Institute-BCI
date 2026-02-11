@@ -11,11 +11,11 @@ The dynamic type conversion feature has been implemented in the C backend. To te
    cd compiler_frontend_py
    ```
 
-2. Create a simple `.bpl` file that doesn't use ask in expression context (since parser doesn't support it yet)
+2. Create a simple `.NSL` file that doesn't use ask in expression context (since parser doesn't support it yet)
 
 3. Compile and run:
    ```powershell
-   py frontend.py yourtest.bpl
+   py frontend.py yourtest.NSL
    cd ..\compiler_backend_c  
    .\main.exe ..\ast.json
    ```

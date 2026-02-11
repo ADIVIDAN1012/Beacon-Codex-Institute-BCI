@@ -1,6 +1,6 @@
-# Error Handling in Beacon
+# Error Handling in Nervestack
 
-Error handling in Beacon is designed to be expressive, clear, and aligned with the UOP (Universal User-Oriented Programming) philosophy. Instead of traditional `try-catch-finally` blocks, Beacon uses an `attempt-trap-conclude` structure that reads more like natural language.
+Error handling in Nervestack is designed to be expressive, clear, and aligned with the UOP (Universal User-Oriented Programming) philosophy. Instead of traditional `try-catch-finally` blocks, Nervestack uses an `attempt-trap-conclude` structure that reads more like natural language.
 
 ---
 
@@ -19,7 +19,7 @@ Error handling in Beacon is designed to be expressive, clear, and aligned with t
 
 ## 2. Common Error Types
 
-Beacon includes several built-in error types to cover common failure scenarios:
+Nervestack includes several built-in error types to cover common failure scenarios:
 
 | Error Type | Description |
 |---|---|
@@ -37,9 +37,9 @@ Beacon includes several built-in error types to cover common failure scenarios:
 
 ## 3. Basic Error Handling
 
-The `attempt-trap-conclude` structure is the foundation of error handling in Beacon.
+The `attempt-trap-conclude` structure is the foundation of error handling in Nervestack.
 
-```beacon
+```Nervestack
 attempt {
     num = convert "abc" to Num
     show("Conversion successful.")
@@ -58,7 +58,7 @@ conclude {
 
 You can manually `trigger` an error. This is useful for enforcing constraints in your own functions.
 
-```beacon
+```Nervestack
 spec set_age(new_age) {
     check new_age < 0 {
         trigger TypeFail with "Age cannot be negative."
@@ -73,7 +73,7 @@ spec set_age(new_age) {
 
 Inside a `trap` block, the special variable `peek` contains the message or data associated with the error.
 
-```beacon
+```Nervestack
 attempt {
     trigger FailGeneral with "Something went wrong."
 }
@@ -88,7 +88,7 @@ trap FailGeneral {
 
 You can chain multiple `trap` blocks to handle different types of errors from a single `attempt` block.
 
-```beacon
+```Nervestack
 spec divide(a, b) {
     check kind(a) != "Num" or kind(b) != "Num" {
         trigger TypeFail with "Both inputs must be numbers."

@@ -2,7 +2,7 @@
 
 ## 🎉 Major Update: Pack Collections and OOP Enhancements
 
-Beacon v2.0.0 introduces powerful new features that make the language even more expressive and unique!
+Nervestack v2.0.0 introduces powerful new features that make the language even more expressive and unique!
 
 ### ✨ What's New
 
@@ -23,13 +23,13 @@ Beacon v2.0.0 introduces powerful new features that make the language even more 
 - Enhanced parser support for complex OOP structures
 
 **Accurate Documentation** 📚
-- Created comprehensive `comparison.md` comparing Beacon vs Java/C/Python
+- Created comprehensive `comparison.md` comparing Nervestack vs Java/C/Python
 - Updated website with honest runtime description (C-powered JSON AST interpreter)
 - Fixed all misleading dual-mode claims
 
 ### 🔧 Pack Collections Usage
 
-```beacon
+```Nervestack
 < Basic pack >
 firm nums = pack(1, 2, 3)
 show "Numbers: |nums|"
@@ -46,7 +46,7 @@ firm calculated = pack(10 + 5, 20 * 2)
 
 ### 🔁 Traverse Loops
 
-```beacon
+```Nervestack
 traverse i from 1 to 5:
     show "Count: |i|"
 done
@@ -54,7 +54,7 @@ done
 
 ### 📝 Blueprint/Spawn Enhancements
 
-```beacon
+```Nervestack
 blueprint Animal:
     has name
     has age
@@ -93,10 +93,10 @@ firm dog = spawn Animal("Rex", 3)
 
 ### 📦 Downloads
 
-**Latest Release:** [v2.0.0](https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/releases/tag/v2.0.0)
+**Latest Release:** [v2.0.0](https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/releases/tag/v2.0.0)
 
-- **BPL.exe** - C runtime interpreter (near-native performance)
-- **beacon-2.0.0.vsix** - VS Code extension with pack/unpack support
+- **NSL.exe** - C runtime interpreter (near-native performance)
+- **Nervestack-2.0.0.vsix** - VS Code extension with pack/unpack support
 
 ### 🐛 Bug Fixes
 - Fixed `TriggerNode` serialization in JSON AST
@@ -104,18 +104,18 @@ firm dog = spawn Animal("Rex", 3)
 - Fixed string interpolation in method bodies
 
 ### 📚 Documentation
-- [comparison.md](https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/blob/master/comparison.md) - Language comparison guide
-- [Website](https://adividan1012.github.io/Beacon-Labs/) - Updated with v2.0 features
+- [comparison.md](https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/blob/master/comparison.md) - Language comparison guide
+- [Website](https://adividan1012.github.io/Nervestack-Labs/) - Updated with v2.0 features
 
 ---
 
-**Full Changelog**: [v1.0.0...v2.0.0](https://github.com/ADIVIDAN1012/Beacon-Code-Engine-BCE/compare/v1.0.0...v2.0.0)
+**Full Changelog**: [v1.0.0...v2.0.0](https://github.com/ADIVIDAN1012/Nervestack-Code-Engine-BCE/compare/v1.0.0...v2.0.0)
 
 **Execution**: 
 ```bash
-# Compile .bpl to JSON AST
-python -m src.frontend.parser program.bpl
+# Compile .NSL to JSON AST
+python -m src.frontend.parser program.NSL
 
 # Execute with C runtime
-BPL.exe program.bpl.json
+NSL.exe program.NSL.json
 ```
